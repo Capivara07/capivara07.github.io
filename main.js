@@ -22,7 +22,7 @@ var text = {
     points:"",
     lives:"",
     hs:"",
-    death:"",
+    death:["",""],
     restart:""
 }
 var lives = initialLives
@@ -527,7 +527,7 @@ function isDead(y) {
             if (lives === 0) {
                 dead = true
                 setTimeout(function () {
-                    if (confirm(text.death)) {
+                    if (confirm(text.death["0"] + snake.tiles.length + text.death["1"])) {
                         hasRestarted = true
                         reset("hard")
                     }
@@ -1112,7 +1112,8 @@ function english() {
     text.points = "Points: "
     text.lives = "Lives: "
     text.hs = "Max: "
-    text.death = "You died. Would you like to restart?"
+    text.death["0"] = "You died. Your snake had "
+    text.death["1"] = " squares. Would you like to restart?"
     text.restart = "Restart"
 }
 function portuguese() {
@@ -1120,7 +1121,8 @@ function portuguese() {
     text.points = "Pontos: "
     text.lives = "Vidas: "
     text.hs = "Record: "
-    text.death = "Você morreu. Gostaria de recomeçar?"
+    text.death["0"] = "Você morreu. Sua cobra tinha "
+    text.death["1"] = " quadrados. Gostaria de recomeçar?"
     text.restart = "Recomeçar"
 }
 function setUIDarkMode() {
