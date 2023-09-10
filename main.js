@@ -1113,7 +1113,7 @@ function english() {
     text.lives = "Lives: "
     text.hs = "Max: "
     text.death["0"] = "You died. Your snake had "
-    text.death["1"] = " squares. Would you like to restart?"
+    text.death["1"] = " square(1). Would you like to restart?"
     text.restart = "Restart"
 }
 function portuguese() {
@@ -1122,7 +1122,7 @@ function portuguese() {
     text.lives = "Vidas: "
     text.hs = "Record: "
     text.death["0"] = "Você morreu. Sua cobra tinha "
-    text.death["1"] = " quadrados. Gostaria de recomeçar?"
+    text.death["1"] = " quadrado(s). Gostaria de recomeçar?"
     text.restart = "Recomeçar"
 }
 function setUIDarkMode() {
