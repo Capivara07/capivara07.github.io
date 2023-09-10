@@ -1,11 +1,11 @@
 const toDebug = false
-var initialLives = 5
+var initialLives = 1
 var toSpawnBonus = true
 var wallsInitial = true
 var autoMove = true
 var initialSnakeSpeed = 1
 //minimum tileCount is 11 with walls and 10 without
-var tileCount = 15
+var tileCount = 17
 var language = "eng"
 var showGrid = false
 var gameTheme = "dark"
@@ -1113,7 +1113,7 @@ function english() {
     text.lives = "Lives: "
     text.hs = "Max: "
     text.death["0"] = "You died. Your snake had "
-    text.death["1"] = " square(1). Would you like to restart?"
+    text.death["1"] = " square(s). Would you like to restart?"
     text.restart = "Restart"
 }
 function portuguese() {
