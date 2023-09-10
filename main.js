@@ -964,7 +964,7 @@ document.getElementById("pause").addEventListener("click",PausePlay)
 var isHelpOpen = false
 var helpPage = document.createElement("iframe")
 helpPage.src = "help.html"
-helpPage.width =  "100" + sizeMeasurement
+helpPage.style.width =  "100" + sizeMeasurement
 helpPage.style.height =  "100" + sizeMeasurement
 function openHelp() {
     settingsMenu.replaceWith(helpPage)
@@ -979,7 +979,7 @@ var areSettingsOpen = false
 var settingsMenu = document.createElement("iframe")
 settingsMenu.src = "settings.html"
 settingsMenu.id = "settingsMenu"
-settingsMenu.width =  "100" + sizeMeasurement
+settingsMenu.style.width =  "100" + sizeMeasurement
 settingsMenu.style.height =  "100" + sizeMeasurement
 function submitSettings(sufix) {
     if (sufix === "Color") {
@@ -1129,13 +1129,11 @@ function setUIDarkMode() {
     uiTheme = "dark"
     document.body.style.backgroundColor = darkGroundColor
     document.body.style.color = "#ffffff"
-    document.body.style.outline = "6vw solid " + darkGroundColor
 }
 function setUILightMode() {
     uiTheme = "light"
     document.body.style.backgroundColor = lightGroundColor
     document.body.style.color = "#1e1e1e"
-    document.body.style.outline = "6vw solid " + lightGroundColor
 }
 function setGameDarkMode() {
     gameTheme = "dark"
