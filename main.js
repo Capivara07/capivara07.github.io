@@ -562,10 +562,10 @@ function isDead(y) {
 var restartBtn = document.createElement("button")
 restartBtn.id = "restartBtn"
 restartBtn.style.background = fruit.color
-restartBtn.style.width = "24vw"
-restartBtn.style.height = "15vw"
+restartBtn.style.width = "24" + sizeMeasurement
+restartBtn.style.height = "15" + sizeMeasurement
 restartBtn.innerHTML = text.restart
-restartBtn.style.fontSize = "4vw"
+restartBtn.style.fontSize = "4" + sizeMeasurement
 function hasWon(y) {
     if (snake.tiles.includes(target.x + "," + target.y ) || y === "y") {
         console.log("has won clear")
@@ -964,8 +964,8 @@ document.getElementById("pause").addEventListener("click",PausePlay)
 var isHelpOpen = false
 var helpPage = document.createElement("iframe")
 helpPage.src = "help.html"
-helpPage.width = "100%"
-helpPage.style.height = "100vw"
+helpPage.width =  "100" + sizeMeasurement
+helpPage.style.height =  "100" + sizeMeasurement
 function openHelp() {
     settingsMenu.replaceWith(helpPage)
     isHelpOpen = true
@@ -979,8 +979,8 @@ var areSettingsOpen = false
 var settingsMenu = document.createElement("iframe")
 settingsMenu.src = "settings.html"
 settingsMenu.id = "settingsMenu"
-settingsMenu.width = "100%"
-settingsMenu.style.height = "100vw"
+settingsMenu.width =  "100" + sizeMeasurement
+settingsMenu.style.height =  "100" + sizeMeasurement
 function submitSettings(sufix) {
     if (sufix === "Color") {
         let colorKeys = [snake,target,enemy,fruit,speedBoost,wall,portal1,star,bonusLife]
