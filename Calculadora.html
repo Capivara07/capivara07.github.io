@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+        html {background-color: #212121; color: #ffffff;}
+        button {height: 85px; width: 85px; border: 5px solid #3f3f3f; border-radius: 100px; font-size: 40px}
+        .res {text-align: end; font-size:  60px;}
+        .numbtn {background-color: #3f3f3f; color: #ffffff;}
+        .opbtn {background-color: #3f3f3f; color: #40b6ff}
+        .cbtn {background-color: #3f3f3f; color: #ff4040}
+        .eqsbtn {background-color: #40b6ff; border: 5px solid #40b6ff}
+        .tab {border-top: 1px solid #3f3f3f}
+    </style>
+</head>
+<body>
+    <table height="155"></table>
+    <table width="375" height="77">
+            <td class="res" id="res"></td>
+    </table>
+    <table width="392" height="485" class="tab">
+        <tr>
+            <td><button id="cbtn" class="cbtn">C</button></td>
+            <td><button class="numbtn" id="sqrtbtn">√</button></td>
+            <td><button class="numbtn" id="potbtn">x²</button></td>
+            <td><button class="opbtn" id="divbtn">÷</button></td>
+        </tr>
+        <tr>
+            <td><button class="numbtn" id="1btn">1</button></td>
+            <td><button class="numbtn" id="2btn">2</button></td>
+            <td><button class="numbtn" id="3btn">3</button></td>
+            <td><button class="opbtn" id="timesbtn">×</button></td>
+        </tr>
+        <tr>
+            <td><button class="numbtn" id="4btn">4</button></td>
+            <td><button class="numbtn" id="5btn">5</button></td>
+            <td><button class="numbtn" id="6btn">6</button></td>
+            <td><button class="opbtn" id="minbtn">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="numbtn" id="7btn">7</button></td>
+            <td><button class="numbtn" id="8btn">8</button></td>
+            <td><button class="numbtn" id="9btn">9</button></td>
+            <td><button class="opbtn" id="plusbtn">+</button></td>
+        </tr>
+        <tr>
+            <td><button class="numbtn" id="negbtn">+/-</button></td>
+            <td><button class="numbtn" id="0btn">0</button></td>        
+            <td><button class="numbtn" id="dotbtn">.</button></td>
+            <td><button class="eqsbtn" id="eqsbtn">=</button></td>
+        </tr>
+    </table>
+    <script>
+    var value1 = []
+    var value2= []
+    var value = "1"
+    var operation = null
+    var sqrt = []
+    function clear() {document.getElementById("res").innerHTML=""; value1=[]; value2=[]; value="1"; operation=null; sqrt = "n"}
+    document.getElementById("cbtn").addEventListener("dblclick", clear)
+    function num1() {document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+"1"; value === "1"? value1.push("1"):value2.push("1")}
+    document.getElementById("1btn").addEventListener("click", num1)
+
+    function num2(){document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+2; value === "1"?
+value1.push("2"):value2.push("2")}
+    document.getElementById("2btn").addEventListener("click", num2)
+    function num3(){document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+3; value === "1"? value1.push("3"):value2.push("3")}
+    document.getElementById("3btn").addEventListener("click", num3) 
+    function num4() {document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+4; value === "1"? value1.push("4"):value2.push("4")}
+    document.getElementById("4btn").addEventListener("click", num4)
+    function num5(){document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+5; value === "1"?value1.push("5"):value2.push("5")}         
+    document.getElementById("5btn").addEventListener("click", num5)
+    function num6() {document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+6; value === "1"? value1.push("6"):value2.push("6")}
+    document.getElementById("6btn").addEventListener("click", num6)
+    function num7() {document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+7; value === "1"? value1.push("7"):value2.push("7")}
+    document.getElementById("7btn").addEventListener("click", num7) 
+    function num8() {document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+8; value === "1"? value1.push("8"):value2.push("8")}
+    document.getElementById("8btn").addEventListener("click", num8)
+    function num9() {document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+9; value === "1"? value1.push("9"):value2.push("9")}
+    document.getElementById("9btn").addEventListener("click", num9)
+    function num0() {document.getElementById("res").innerHTML=document.getElementById("res").innerHTML+0; value === "1"?value1.push("0"):value2.push("0")}
+    document.getElementById("0btn").addEventListener("click", num0)
+    function dot() {if (value === "1") {if (value1.includes(".") === false) {if (value1.length === 0 || value1.toString() === "-") {value1.push("0",".")} else {value1.push(".")}}} else {if (value2.includes(".") === false) {if (value2.length === 0 || value2.toString() === "-") {value2.push("0",".")} else {value2.push(".")}}}; document.getElementById("res").innerHTML=value1.concat(operation, value2).join("")}
+    document.getElementById("dotbtn").addEventListener("click", dot)
+    function negative() {if (value === "1") {
+        if (value1.includes("-")) {value1.shift()} else {value1.unshift("-")}} else {if (value2.includes("-")) {value2.shift()} else {value2.unshift("-")}}; document.getElementById("res").innerHTML=value1.concat(operation, value2).join("")}
+    document.getElementById("negbtn").addEventListener("click", negative)
+    function reset() {operation=""; value="1"}
+    function del() {value === "2"?value2.length === 0?reset():value2.pop():value1.pop(); document.getElementById("res").innerHTML=value1.concat(operation, value2).join("")}
+    document.getElementById("cbtn").addEventListener("click", del) 
+    function update() {document.getElementById("res").innerHTML=value1.concat(operation, value2).join("")}    
+    function division() {if (value2.length !== 0 && operation !== null) {igual(); operation="÷"; value="2"} else {if (value1.length !== 0) {operation="÷"; value = "2"}}; update()}    
+    document.getElementById("divbtn").addEventListener("click", division)
+    function times()
+    {if (value2.length !== 0 && operation !== null) {igual(); operation="×"; value="2"} else {if (value1.length !== 0) {operation="×"; value = "2"}}; update()}
+    document.getElementById("timesbtn").addEventListener( "click", times)
+    function minus() {if (value2.length !== 0 && operation !== null) {igual(); operation="-"; value="2"} else {if (value1.length !== 0) {operation="-"; value = "2"}}; update()}
+    document.getElementById("minbtn").addEventListener("click",minus)
+    function plus() {if (value2.length !== 0 && operation !== null) {igual(); operation="+"; value="2"} else {if (value1.length !== 0) {operation="+"; value = "2"}}; update()}
+    document.getElementById("plusbtn").addEventListener("click",plus) 
+    function change() {value2.unshift(value1.pop())}
+    function opsq(){operation= "√"; value = "2"; value1.concat(value2).forEach(change); update()}
+    document.getElementById("sqrtbtn").addEventListener("click", opsq)
+    function potency() {if (value2.length !== 0 && operation !== null) {igual(); operation="^"; value="2"} else {if (value1.length !== 0) {operation="^"; value = "2"}}; update()}
+    document.getElementById("potbtn").addEventListener("click",potency)
+        function erase() {
+            del();
+            if (value2.pop() === "0" && value2.includes(".") === true) {
+                erase()
+            }
+        }
+        function igual() {if (value2.length !== 0 && value1.toString() !== "-" && value2.toString() !== "-" && value1.toString() !== "." && value2.toString() !== ".") {operation === "√"? document.getElementById("res").innerHTML=Math.sqrt(value2.join("")):null; operation === "^"?document.getElementById("res").innerHTML=value1.join("") ** value2.join(""):null; if (operation === "÷") {
+        if (value2.includes(".") === true && value2.pop() === "0") {
+           erase() 
+        } 
+        else {
+            document.getElementById("res").innerHTML=value1.join("") / value2.join("")
+        }};
+        operation === "×"?document.getElementById("res").innerHTML=value1.join("") * value2.join(""):null; operation === "-"?document.getElementById("res").innerHTML=value1.join("") - value2.join(""):null; operation === "+"?document.getElementById("res").innerHTML=Number(value1.join("")) + Number(value2.join("")):null; value1=[]; value2=[]; value="1"; operation=null; value1 = (Array.from(document.getElementById("res").innerHTML)); while(value1.length > 10) {del()}}}
+    document.getElementById("eqsbtn").addEventListener("click", igual)
+    </script>
+</body>
+</html>

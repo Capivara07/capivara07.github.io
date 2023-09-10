@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+        html {background-color: #000000}
+        .board {width: 400px; height: 420px; font-size: 55px; text-align: center; color: #ffffff}
+        .tiles {background-color: #343434; width: 80px; height: 70px; border: 5px solid #adadad; outline-style: solid; outline-width: 5px; outline-color: #000000}
+        button {width: 35px; height: 66px; background-color: #636363; color: #ffffff}
+    </style>
+</head>
+<body>
+    <table class="board">
+        <tr>
+            <td id="1,1" class="tiles"></td>
+            <td id="2,1" class="tiles"></td>
+            <td id="3,1" class="tiles"></td>
+            <td id="4,1" class="tiles"></td>
+            <td id="5,1" class="tiles"></td>
+        </tr>
+        <tr>
+            <td id="1,2" class="tiles"></td>            
+            <td id="2,2" class="tiles"></td>
+            <td id="3,2" class="tiles"></td>
+            <td id="4,2" class="tiles"></td>
+            <td id="5,2" class="tiles"></td>
+        </tr>         
+        <tr>
+            <td id="1,3" class="tiles"></td>
+            <td id="2,3" class="tiles"></td>
+            <td id="3,3" class="tiles"></td>
+            <td id="4,3" class="tiles"></td>
+            <td id="5,3" class="tiles"></td>
+        </tr>         
+        <tr>
+            <td id="1,4" class="tiles"></td>
+            <td id="2,4" class="tiles"></td>
+            <td id="3,4" class="tiles"></td>
+            <td id="4,4" class="tiles"></td>
+            <td id="5,4" class="tiles"></td>          
+        </tr>
+        <tr>
+            <td id="1,5" class="tiles"></td>
+            <td id="2,5" class="tiles"></td>
+            <td id="3,5" class="tiles"></td>
+            <td id="4,5" class="tiles"></td>
+            <td id="5,5" class="tiles"></td>
+        </tr>
+        <tr>
+            <td id="1,6" class="tiles"></td>
+            <td id="2,6" class="tiles"></td>
+            <td id="3,6" class="tiles"></td>
+            <td id="4,6" class="tiles"></td>
+            <td id="5,6" class="tiles"></td>
+        </td>
+    </table>
+    <table class="keyboard">
+        <tr>
+            <td><button id="Q">Q</button></td>
+            <td><button id="W">W</button></td>
+            <td><button id="E">E</button></td>
+            <td><button id="R">R</button></td>
+            <td><button id="T">T</button></td>
+            <td><button id="Y">Y</button></td>
+            <td><button id="U">U</button></td>
+            <td><button id="I">I</button></td>
+            <td><button id="O">O</button></td>
+            <td><button id="P">P</button></td>
+        </tr>
+        <tr>
+            <td><button id="Lang" style="background-color: #6acbff; color: #000000">Pt</button></td>
+            <td><button id="A">A</button></td>
+            <td><button id="S">S</button></td>
+            <td><button id="D">D</button></td>
+            <td><button id="F">F</button></td>
+            <td><button id="G">G</button></td>
+            <td><button id="H">H</button></td>
+            <td><button id="J">J</button></td>
+            <td><button id="K">K</button></td>
+            <td><button id="L">L</button></td>
+        </tr>
+        <tr>
+            <td><button id="enter" style="background-color: #6fb66a; color: #000000">En-<br>ter</button></td>
+            <td></td>
+            <td><button id="Z">Z</button></td>
+            <td><button id="X">X</button></td>
+            <td><button id="C">C</button></td>
+            <td><button id="V">V</button></td>
+            <td><button id="B">B</button></td>
+            <td><button id="N">N</button></td>
+            <td><button id="M">M</button></td>
+            <td><button id="del" style="background-color: #b65b62">del</button></td>
+        </tr>
+    </table>
+    <script>
+        function random (list) {return list[Math.floor(Math.random()*list.length)]}
+        var WordsPt = ["VENTO","PORTA","CINCO","QUASE","GALHO","VISAO","GENIO","VINTE","ALGUM","VISOR","POETA","VERBO","VOGAL","OLHAR","PONTA","POMBO","POLAR","CINTO","SINTO","MENTE","SENTE","VIDRO","LITRO","BATER","COMER","CORRE","CHORA","HOTEL","ALBUM","ALUNO","ALUGO","PALCO","TALCO","FALTA","ZUMBI","FICHA","LEIGO","MUITO","TRENS","CICLO","GOLPE","PRATO","PASTO","MISTO","VIGOR","TRIGO","TITIA","TITIO","PULAR","FEIXE","PAVOR","COBRE","POBRE","PONTE","TROCA","TROPA","PARTE","MARTE","PENAS","PISTA","MINTA","ZINCO","SAGAZ","FEROZ","FUGAZ","IRMAS","NERVO","PENTE","LENTE","RENTE","FRETE","PORTE","FORTE","SORTE","FONTE","FIBRA","VARAL","HAVER","GOLPE","POSTE","GOSTA","GOSTE","GOSTO","POSTO","PORTO","GORDO","POLVO","SOGRO","SOGRA","VASTO","GASTO","GATOS","PASSO","PALMA","PALMO","BONDE","TREME","TEMER","FUNDO","FUNGO","DENTE","GUIAR","HORAS","ZIPER","BICAR","BICHO","DITAR","VIVER","HOMEM","DIZER","CORRE","CARRO","FARDO","FARTO","ERREI","ERRAR","PINTA","TINTA","MENTA","BENTA","BENTO","LENTA","LENTO","JOGAR","JOGOU","FALAR","FALOU","FALEI","BEBEU","BEBIA","VIVEU","VIVIA","TRAVA","TRAVO","TRAGO","TRAGA","PAGUE","PAGAR","PAGOU","AVIAO","AGUIA","FUGIR","FUGIU","PEGAR","PEGOU","PEGUE","SEGUE","FAZER","LATIR","LATIM","MATAR","MATOU","GRITO","GRITE","GRITO","FRITO","FRITA","FRITE"]
+        var WordsEn = ["FLYER","WHIRL","HOBBY","CURLY","FURRY","FIEND","WHEEL","POLAR","ARISE","PRIDE","LIGHT","MIGHT","HOTEL","EIGHT","HEART","WRITE","WHITE","FIGHT","COLOR","VOWEL","TIMER","MINES","BRIBE","BRIDE","SIGHT","SILKY","ROUGH","BATHE","LATER","PLATE","UNITE","GLIDE","ALIVE","PROUD","SOUND","MOUNT","SLIDE"]
+        var WordPool = WordsPt
+        var word = random(WordPool) 
+        var tile = 1
+        var row = 1
+        function disable() {
+            for (let i = 0; i < 26; i++) {
+                document.getElementById("QWERTYUIOPASDFGHJKLZXCVBNM"[i]).disabled = true            
+            }
+        }
+        function reset() {let r = row*5; row = 1; word = random(WordPool); for (let i = 1, x = 0; x < r; i++, x++) 
+            {i === 6?i = 1:null; x === 5?row = 2:null; x === 10?row = 3:null; x === 15?row = 4:null; x === 20?row = 5:null; x === 25?row = 6:null; 
+            document.getElementById(document.getElementById(i + "," + row).innerHTML).style.backgroundColor = "#636363"; 
+            document.getElementById(document.getElementById(i + "," + row).innerHTML).style.color = "#ffffff"; 
+            document.getElementById(i + "," + row).style.color = "#ffffff";
+            document.getElementById(i + "," + row).style.backgroundColor = "#343434"; 
+            document.getElementById(i + "," + row).innerHTML = ""}
+            row = 1; tile = 1}            
+        function submit() {let G = 0; let i = 0; if (document.getElementById("5," + row).innerHTML !== "") 
+        {while (i < 5) 
+            {if (Array.from(word).includes(document.getElementById(i+1 + "," + row).innerHTML) === true) 
+                {document.getElementById(i+1 + "," + row).style.backgroundColor = "#f4dd3d"; 
+                 document.getElementById(document.getElementById(i+1 + "," + row).innerHTML).style.backgroundColor = "#f4dd3d"; document.getElementById(document.getElementById(i+1 + "," + row).innerHTML).style.color = "#000000"; document.getElementById(i+1 + "," + row).style.color = "#000000"}
+            else 
+                {document.getElementById(i+1 + "," + row).style.backgroundColor = "#080808"; 
+                document.getElementById(document.getElementById(i+1 + "," + row).innerHTML).style.backgroundColor = "#080808"} 
+            if (Array.from(word)[i] === document.getElementById(i+1 + "," + row).innerHTML) 
+                {document.getElementById(i+1 + "," + row).style.backgroundColor = "#14b30f"; document.getElementById(document.getElementById(i+1 + "," + row).innerHTML).style.color = "#ffffff"; document.getElementById(Array.from(word)[i]).style.backgroundColor = "#14b30f"; document.getElementById(i+1 + "," + row).style.color = "#ffffff"; G++};
+            i++; if (G === 5) {
+                if (confirm("Você ganhou. Parabéns. A palavra é " + word + ". Você levou " + row + " tentativas para descobrir. Quer jogar novamente?") === true) 
+                    {reset(); row--} 
+                else {
+                    disable()
+                }
+            }}; 
+            row++; tile = 1; 
+            if (row > 6) 
+                {if (confirm("Você perdeu. A palavra era " + word + ". Quer jogar novamente?") === true)
+                    {row--; reset()}
+                else {
+                    disable()                
+                }
+            }
+        }}
+        function LangSwitch() {
+            if (confirm("Mudar idioma e resetar o jogo?") === true) {
+                if (document.getElementById("Lang").innerHTML === "Pt") {
+                    WordPool = WordsEn;
+                    document.getElementById("Lang").innerHTML = "En"
+                }
+                else {
+                    WordPool = WordsPt;
+                    document.getElementById("Lang").innerHTML = "Pt"
+                };
+            if (document.getElementById(row + ",5").innerHTML === "") {
+                for (let i = 0; i < 4; i++) {
+                    del()
+                }
+                row--
+            }
+            reset();
+            };
+        }
+        document.getElementById("Lang").addEventListener("click",LangSwitch)      
+        document.getElementById("enter").addEventListener("click",submit)
+        function del() {let deltile = null; if (document.getElementById("5," + row).innerHTML === "" && document.getElementById("1," + row).innerHTML !== "") {deltile = tile-1; tile--} else {deltile = tile}; document.getElementById(deltile + "," + row).innerHTML = ""}
+        document.getElementById("del").addEventListener("click",del)        
+        function Qkey() {document.getElementById(tile + "," + row).innerHTML="Q"; tile < 5?tile++:null}
+                document.getElementById("Q").addEventListener("click",Qkey)
+        function Wkey() {document.getElementById(tile + "," + row).innerHTML="W"; tile < 5?tile++:null}
+                document.getElementById("W").addEventListener("click",Wkey)
+        function Ekey() {document.getElementById(tile + "," + row).innerHTML="E"; tile < 5?tile++:null}
+                document.getElementById("E").addEventListener("click",Ekey)
+        function Rkey() {document.getElementById(tile + "," + row).innerHTML="R"; tile < 5?tile++:null}
+                document.getElementById("R").addEventListener("click",Rkey)
+        function Tkey() {document.getElementById(tile + "," + row).innerHTML="T"; tile < 5?tile++:null}
+                document.getElementById("T").addEventListener("click",Tkey)
+        function Ykey() {document.getElementById(tile + "," + row).innerHTML="Y"; tile < 5?tile++:null}
+                document.getElementById("Y").addEventListener("click",Ykey)
+        function Ukey() {document.getElementById(tile + "," + row).innerHTML="U"; tile < 5?tile++:null}
+                document.getElementById("U").addEventListener("click",Ukey)
+        function Ikey() {document.getElementById(tile + "," + row).innerHTML="I"; tile < 5?tile++:null}
+                document.getElementById("I").addEventListener("click",Ikey)
+        function Okey() {document.getElementById(tile + "," + row).innerHTML="O"; tile < 5?tile++:null}
+                document.getElementById("O").addEventListener("click",Okey)
+        function Pkey() {document.getElementById(tile + "," + row).innerHTML="P"; tile < 5?tile++:null}
+                document.getElementById("P").addEventListener("click",Pkey)
+        function Akey() {document.getElementById(tile + "," + row).innerHTML="A"; tile < 5?tile++:null}
+                document.getElementById("A").addEventListener("click",Akey)
+        function Skey() {document.getElementById(tile + "," + row).innerHTML="S"; tile < 5?tile++:null}
+                document.getElementById("S").addEventListener("click",Skey)
+        function Dkey() {document.getElementById(tile + "," + row).innerHTML="D"; tile < 5?tile++:null}
+                document.getElementById("D").addEventListener("click",Dkey)
+        function Fkey() {document.getElementById(tile + "," + row).innerHTML="F"; tile < 5?tile++:null}
+                document.getElementById("F").addEventListener("click",Fkey)
+        function Gkey() {document.getElementById(tile + "," + row).innerHTML="G"; tile < 5?tile++:null}
+                document.getElementById("G").addEventListener("click",Gkey)
+        function Hkey() {document.getElementById(tile + "," + row).innerHTML="H"; tile < 5?tile++:null}
+                document.getElementById("H").addEventListener("click",Hkey)
+        function Jkey() {document.getElementById(tile + "," + row).innerHTML="J"; tile < 5?tile++:null}
+                document.getElementById("J").addEventListener("click",Jkey)
+        function Kkey() {document.getElementById(tile + "," + row).innerHTML="K"; tile < 5?tile++:null}
+                document.getElementById("K").addEventListener("click",Kkey)
+        function Lkey() {document.getElementById(tile + "," + row).innerHTML="L"; tile < 5?tile++:null}
+                document.getElementById("L").addEventListener("click",Lkey)
+        function Zkey() {document.getElementById(tile + "," + row).innerHTML="Z"; tile < 5?tile++:null}
+                document.getElementById("Z").addEventListener("click",Zkey)
+        function Xkey() {document.getElementById(tile + "," + row).innerHTML="X"; tile < 5?tile++:null}
+                document.getElementById("X").addEventListener("click",Xkey)
+        function Ckey() {document.getElementById(tile + "," + row).innerHTML="C"; tile < 5?tile++:null}
+                document.getElementById("C").addEventListener("click",Ckey)
+        function Vkey() {document.getElementById(tile + "," + row).innerHTML="V"; tile < 5?tile++:null}
+                document.getElementById("V").addEventListener("click",Vkey)
+        function Bkey() {document.getElementById(tile + "," + row).innerHTML="B"; tile < 5?tile++:null}
+                document.getElementById("B").addEventListener("click",Bkey)
+        function Nkey() {document.getElementById(tile + "," + row).innerHTML="N"; tile < 5?tile++:null}
+                document.getElementById("N").addEventListener("click",Nkey)
+        function Mkey() {document.getElementById(tile + "," + row).innerHTML="M"; tile < 5?tile++:null}
+                document.getElementById("M").addEventListener("click",Mkey)
+        function test() {console.log("word: " + word + "\ntile: " + tile + "\nrow: " + row)}
+    </script>
+</body>
+</html>
