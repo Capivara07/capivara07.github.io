@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <ins><h1 id="title" style="text-align: center"></h1></ins>
+    <h3 id="gameplaySub" style="text-align: center"></h3>
+    <table>
+        <form>
+            <tr>
+                <td class="labels">
+                    <label id="wallsSet" for="walls"></label>
+                </td>
+                <td>
+                    <div class="buttons">
+                        <input type="radio" name="walls" value="false" class="false" id="wallsF">
+                        <input type="radio" name="walls" value="true" class="true" id="wallsT">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label id="autoMoveSet" for="autoMove"></label>
+                </td>
+                <td>
+                    <div class="buttons">
+                        <input type="radio" name="autoMove" value="false" class="false" id="autoF">
+                        <input type="radio" name="autoMove" value="true" class="true" id="autoT">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="lives" id="livesSetLabel"></label>
+                </td>
+                <td>
+                    <input id="livesSet" type="range" min="1" max="5" name="lives" style="width: 20vw">
+                    <b id="livesDisplay"></b>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label id="bonusSet" for="bonus"></label>
+                </td>
+                <td>
+                    <div class="buttons">
+                        <input type="radio" name="bonus" value="false" class="false" id="bonusF">
+                        <input type="radio" name="bonus" value="true" class="true" id="bonusT">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="speed" id="speedSetLabel"></label>
+                </td>
+                <td>
+                    <input id="speedSet" type="range" min="5" max="50" name="speed" style="width: 17vw">
+                    <b id="speedDisplay"></b>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="tiles" id="tilesSetLabel"></label>
+                </td>
+                <td>
+                    <input id="tilesSet" type="range" min="11" max="40" name="tiles" style="width: 17vw">
+                    <b id="tilesDisplay"></b>
+                </td>
+            </tr>
+        </table>
+        <h3 id="visualSub" style="text-align: center"></h3>
+        <table>
+            <tr>
+                <td class="labels">
+                    <label id="langSet"></label>
+                </td>
+                <td>
+                    <div class="buttons">
+                        <button id="langBtn" class="langBtn"></button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label id="gridSet" for="grid"></label>
+                </td>
+                <td>
+                    <div class="buttons" id="gridSetDiv">
+                        <input type="radio" name="grid" value="false" class="false" id="gridF">
+                        <input type="radio" name="grid" value="true" class="true" id="gridT">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label id="checkeredSet" for="checkered"></label>
+                </td>
+                <td>
+                    <div class="buttons" id="checkeredSetDiv">
+                        <input type="radio" name="checkered" value="false" class="false" id="checkeredF">
+                        <input type="radio" name="checkered" value="true" class="true" id="checkeredT">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label id="uiThemeSet"></label>
+                </td>
+                <td>
+                    <div class="buttons">
+                        <button id="uiThemeBtn" class="langBtn"></button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label id="gameThemeSet"></label>
+                </td>
+                <td>
+                    <div class="buttons">
+                        <button id="gameThemeBtn" class="langBtn"></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <button id="default" class="settingsBigBtns" style="width: 47vw">
+                <button id="help" class="settingsBigBtns" style="width: 47vw">
+            </td>
+        </tr>
+    </table>
+    <button id="apply" class="settingsBigBtns" style="background-color: #1577ff">
+    <script src="settings.js"></script>
+</body>
+</html>

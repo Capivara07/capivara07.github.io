@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="flexContainer">
+        <table style="height: 12vw">
+            <tr>
+                <td><button class="cornerButtons" id="pause">||</button></td>
+                <td style="width: 31vw"><b id="points"></b></td>
+                <td style="width: 31vw; text-align: center"><b id="lives"></b></td>
+                <td style="width: 31vw; text-align: right"><b id="hs"></b></td>
+                <td><button class="cornerButtons" id="settingsBtn">⚙</button></td>
+            </tr>
+        </table>
+        <div id="boardContainer"></div>
+        <table height="100%">
+            <tr>
+                <td></td>
+                <td id="Ubtn"><button>^</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="Lbtn"><button><</button></td>
+                <td  id="restartContainer" style="text-align: center"><b id="timeleft"></b></td>
+                <td id="Rbtn"><button>></button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="Dbtn"><button>v</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+  <script src="main.js"></script>
+</body>
+</html>
