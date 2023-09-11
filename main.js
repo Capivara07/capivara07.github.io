@@ -1208,7 +1208,7 @@ function changeDirection(direction) {
         let directions = ["r","l","u","d"]
         let opposites = ["l","r","d","u"]
         let opposite = opposites[directions.indexOf(direction)] 
-        if (directionQueue[directionQueue.length - 1] !== direction) {
+        if (directionsInOneTick[directionsInOneTick.length - 1] !== direction) {
             if (snake.tiles.length > 1) {
                 if (directionsInOneTick.length === 0) {
                     if (directionQueue[directionQueue.length - 1] !== opposite) {
