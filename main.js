@@ -1270,3 +1270,20 @@ document.getElementById("Ubtn").addEventListener("click",function() {
 document.getElementById("Dbtn").addEventListener("click",function() {
     changeDirection("d")
 })
+document.body.addEventListener("keydown", (event) => {
+    if (event.key === "d" || event.key === "D" || event.key === "ArrowRight") {
+	changeDirection("r")
+    }
+    if (event.key === "a" || event.key === "A" || event.key === "ArrowLeft") {
+	changeDirection("l")
+    }
+    if (event.key === "w" || event.key === "W" || event.key === "ArrowUp") {
+	changeDirection("u")
+    }
+    if (event.key === "s" || event.key === "S" || event.key === "ArrowDown") {
+	changeDirection("d")
+    }
+    if (event.key === " " || event.key === "Escape") {
+	PausePlay()
+    }
+})
