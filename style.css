@@ -8,6 +8,9 @@ button {
     height: 11vh; 
     font-size: 12vw;
 }
+.flexContainer {
+    display: flex;
+}
 table {
     width: 100%;
 }
