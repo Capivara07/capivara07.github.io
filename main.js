@@ -131,15 +131,45 @@ function hexToRgb(hex) {
 }
 var sizeMeasurement
 function checkScreenSize() {
-    if (window.screen.width > window.screen.height) {
-        console.log("pc screen")
+    let upperElements = document.getElementById("upperInfo").children
+    let directionButtons = ["Lbtn","Rbtn","Dbtn","Ubtn"]
+    let buttonsHeight
+    let buttonsWidth
+    if (window.screen.width > window.screen.height && window.screen.width !== window.screen.height) {
         sizeMeasurement = "vh"
+	document.getElementById("directionsContainer").style.height = "100" + sizeMeasurement
+	document.getElementById("directionsContainer").style.width = Number(window.screen.width - window.screen.height) / 2 + "px"
+	buttonsWidth = Array.from(document.getElementById("directionsContainer").style.width)
+	document.getElementById("flexContainer").style.flexDirection = "row"
+	document.getElementById("upperInfo").style.flexDirection = "column"
+	document.getElementById("upperInfo").style.height = "100" + sizeMeasurement
+	document.getElementById("upperInfo").style.width = Number(window.screen.width - window.screen.height) / 3 + "px"
+	for (let i = 0; i < upperElements.length; i++) {
+	    upperElements[i].style.width = document.getElementById("upperInfo").style.width
+       	    upperElements[i].style.height = "20" + sizeMeasurement
+	}
+	for (let i = 0; i < directionButtons.length; i++) {
+	    document.getElementById(directionButtons[i]).style.width = Number(buttonsWidth.slice(0,buttonsWidth.length - 2).join("")) / 3 + "px"
+       	    document.getElementById(directionButtons[i]).style.height = "33" + sizeMeasurement
+	}
+	document.body.style.fontSize = "4vh"
     }
     else {
-        console.log("phone screen")
         sizeMeasurement = "vw"
+	document.getElementById("flexContainer").style.flexDirection = "column"
+	document.getElementById("upperInfo").style.flexDirection = "row"
+	document.getElementById("lives").style.textAlign = "center"
+        document.getElementById("hs").style.textAlign = "right"
+	document.getElementById("upperInfo").style.width = "100vw"
+	document.getElementById("upperInfo").style.height = "12vw"
+	document.getElementById("directionsContainer").style.height = Number(window.screen.height - window.screen.width) + "px"
+	document.getElementById("directionsContainer").style.width = "100vw"
+	buttonsHeight = Array.from(document.getElementById("directionsContainer").style.height)
+	for (let i = 0; i < directionButtons.length; i++) {
+	    document.getElementById(directionButtons[i]).style.width = "33vw"
+       	    document.getElementById(directionButtons[i]).style.height = Number(buttonsHeight.slice(0,buttonsHeight.length - 2).join("")) / 3 + "px"
+	}
     }
-    console.log("width: " + window.screen.width + "\nheight: " + window.screen.height)
 }
 checkScreenSize()
 var board
