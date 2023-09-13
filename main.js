@@ -397,14 +397,14 @@ function moveSnake() {
     move(snake)
     screenWrap(snake)
     usePortal()
-    if (lives !== 0) {
-        toGrow()
-    }
     if (collision(snake,enemy)) {
         isDead("y")
     }
     else {
         isDead()
+    }
+    if (lives !== 0) {
+        toGrow()
     }
     snake.tiles.push(snake.x + "," + snake.y)
     if (collision(snake,speedBoost) && autoMove) {
@@ -435,6 +435,9 @@ function moveSnake() {
         bonusLife.y = ""
     }
     drawObject(snake)
+	if (walls) {
+        drawBorder(wall.color,0,tileCount - 1)
+	}
 }
 function reset(type) {
     if (type === "hard") {
@@ -760,7 +763,12 @@ var timeLeft = 0
 function starCountdown() {
     timeLeft--
     document.getElementById("timeleft").innerHTML = timeLeft
-    if (timeLeft === 0) {
+    if (timeLeft < 1) {
+		kickObjectFromWalls(target)
+        kickObjectFromWalls(snake)
+        if (enemy.x !== "") {
+            kickObjectFromWalls(enemy)
+		}
         drawBorder(wall.color,0,tileCount - 1)
         for (let i = 0; i < wall.tiles.length; i++) {
             document.getElementById(wall.tiles[i]).style.backgroundColor = wall.color
@@ -768,6 +776,20 @@ function starCountdown() {
         document.getElementById("timeleft").innerHTML = ""
         clearInterval(powerupTimer)
         walls = true
+    }
+}
+function kickObjectFromWalls(object) {
+    if (object.x < 1) {
+        object.x = 1
+    }
+    if (object.x > tileCount - 3) {
+        object.x = tileCount - 2
+    }
+    if (object.y < 1) {
+        object.y = 1
+    }
+    if (object.y > tileCount - 3) {
+        object.y = tileCount - 2
     }
 }
 function screenWrap(object) {
