@@ -143,7 +143,7 @@ function checkScreenSize() {
 	document.getElementById("flexContainer").style.flexDirection = "row"
 	document.getElementById("upperInfo").style.flexDirection = "column"
 	document.getElementById("upperInfo").style.height = "100" + sizeMeasurement
-	document.getElementById("upperInfo").style.width = "21vw"
+	document.getElementById("upperInfo").style.width = "21vh"
 	for (let i = 0; i < upperElements.length; i++) {
 	    upperElements[i].style.width = document.getElementById("upperInfo").style.width
        	    upperElements[i].style.height = "20" + sizeMeasurement
