@@ -138,20 +138,26 @@ function checkScreenSize() {
     if (window.screen.width > window.screen.height && window.screen.width !== window.screen.height) {
         sizeMeasurement = "vh"
 	document.getElementById("directionsContainer").style.height = "100" + sizeMeasurement
-	document.getElementById("directionsContainer").style.width = Number(window.screen.width - window.screen.height) / 2 + "px"
+	document.getElementById("directionsContainer").style.width = Number(window.screen.width / Number(window.screen.height / 100) - 100 - 21) + "vh"
 	buttonsWidth = Array.from(document.getElementById("directionsContainer").style.width)
 	document.getElementById("flexContainer").style.flexDirection = "row"
 	document.getElementById("upperInfo").style.flexDirection = "column"
 	document.getElementById("upperInfo").style.height = "100" + sizeMeasurement
-	document.getElementById("upperInfo").style.width = Number(window.screen.width - window.screen.height) / 3 + "px"
+	document.getElementById("upperInfo").style.width = "21vw"
 	for (let i = 0; i < upperElements.length; i++) {
 	    upperElements[i].style.width = document.getElementById("upperInfo").style.width
        	    upperElements[i].style.height = "20" + sizeMeasurement
 	}
 	for (let i = 0; i < directionButtons.length; i++) {
-	    document.getElementById(directionButtons[i]).style.width = Number(buttonsWidth.slice(0,buttonsWidth.length - 2).join("")) / 3 + "px"
+	    document.getElementById(directionButtons[i]).style.width = Number(buttonsWidth.slice(0,buttonsWidth.length - 2).join("")) / 3 + "vh"
        	    document.getElementById(directionButtons[i]).style.height = "33" + sizeMeasurement
 	}
+	document.getElementById("pause").style.width = "20vh"
+	document.getElementById("pause").style.height = "9vh"
+	document.getElementById("pause").style.fontSize = "6vh"
+	document.getElementById("settingsBtn").style.width = "20vh"
+	document.getElementById("settingsBtn").style.height = "9vh"
+	document.getElementById("settingsBtn").style.fontSize = "6vh"
 	document.body.style.fontSize = "4vh"
     }
     else {
