@@ -173,7 +173,7 @@ function checkScreenSize() {
 	buttonsHeight = Array.from(document.getElementById("directionsContainer").style.height)
 	for (let i = 0; i < directionButtons.length; i++) {
 	    document.getElementById(directionButtons[i]).style.width = "33vw"
-       	    document.getElementById(directionButtons[i]).style.height = Number(buttonsHeight.slice(0,buttonsHeight.length - 2).join("")) / 3 + "px"
+       	    document.getElementById(directionButtons[i]).style.height = Number(buttonsHeight.slice(0,buttonsHeight.length - 2).join("")) / 3 + "vh"
 	}
     }
 }
