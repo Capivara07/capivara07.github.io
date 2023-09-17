@@ -168,7 +168,7 @@ function checkScreenSize() {
         document.getElementById("hs").style.textAlign = "right"
 	document.getElementById("upperInfo").style.width = "100vw"
 	document.getElementById("upperInfo").style.height = "12vw"
-	document.getElementById("directionsContainer").style.height = "33" + "px"
+	document.getElementById("directionsContainer").style.height = "33" + "vh"
 	document.getElementById("directionsContainer").style.width = "100vw"
 	buttonsHeight = Array.from(document.getElementById("directionsContainer").style.height)
 	for (let i = 0; i < directionButtons.length; i++) {
