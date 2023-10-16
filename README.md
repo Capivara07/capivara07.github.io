@@ -1,2 +1,2 @@
 # capivara07.github.io
-All of my projects in one page.
+All of my more serious projects as a beginner.
